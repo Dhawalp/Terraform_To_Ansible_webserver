@@ -1,0 +1,16 @@
+# setup-app.yml
+
+---
+  - hosts: webservers
+    become: true
+    tasks:
+      - name: Upload application file
+        copy:
+          src: ../index.php
+          dest: /var/www/html
+          mode: 0755
+        
+    handlers:
+      - name: restart apache
+        service: name=httpd state=restarted
+        
