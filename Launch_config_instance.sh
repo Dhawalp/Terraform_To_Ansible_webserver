@@ -2,7 +2,6 @@
 
 cd terraTOansible/terracreate/
 terraform plan -out out.detailRE
-echo "I was here"
 sleep 5
 if [[ -e out.details ]];  then
 terraform apply out.detailRE
